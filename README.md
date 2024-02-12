@@ -3,18 +3,15 @@
 Point Surfaces Library: C++ codes for analyszing surfaces in points
 ********************************************************************************
 
-- bin:
-
+- bin\
 Dlls and Apps.
 
 
-- inc+lib:
-
+- inc+lib\
 Lib and h/hpp files.
 
 
-- demos:
-
+- demos\
 Demo codes for Visual Studio 
 
 
