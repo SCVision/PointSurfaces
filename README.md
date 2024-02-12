@@ -8,7 +8,7 @@ Dlls and Apps.
 
 
 - inc+lib\
-Lib and h/hpp files.
+Lib files and h/hpp files.
 
 
 - demos\
