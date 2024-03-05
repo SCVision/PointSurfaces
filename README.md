@@ -18,4 +18,4 @@ For raw data sets, please go to https://github.com/SCVision/PointSurfaces_Data
 
 ********************************************************************************
 
-Please contact jylin@gdut.edu.cn for any comments and bugs.
+Please contact jylin@gdut.edu.cn if you have any comments or find any bugs.
