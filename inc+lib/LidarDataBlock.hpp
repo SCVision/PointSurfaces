@@ -59,9 +59,9 @@ namespace Lidar3D
 	struct LidarDataInfo
 	{
 		// LiDAR data info
-		std::int32_t lidarType;	// type of LiDAR (enum LiDAR_Type).
-		std::int32_t dataTotal;	// total length of data buffer: >datumSize x colTotal x rowTotal. 0 - new structure
-		std::int32_t datumSize;	// length of one data point. refer to struct LidarData_xxx
+		std::int32_t lidarType;		// type of LiDAR (enum LiDAR_Type).
+		std::int32_t dataTotal;		// total length of data buffer: >datumSize x colTotal x rowTotal. 0 - new structure
+		std::int32_t datumSize;		// length of one data point. refer to struct LidarDataRaw_intens
 		std::int32_t colTotal;		// maximum points in a column.
 		std::int32_t rowTotal;		// maximum points in a row.
 		std::int32_t nRow;			// number of available data rows. 
@@ -70,7 +70,7 @@ namespace Lidar3D
 		double* angleCol;   // column angles (deg), length: colTotal
 		double* angleRow;   // row angles (deg), length: rowTotal
 		double* tsRow;      // time stamp of each row (ms), length: rowTotal
-		double* datablock;    // LiDAR data buffer, size: dataTotal, dim: 3 (datumSize x colTotal x rowTotal). refer to struct LidarPoint_xyzi
+		double* datablock;    // LiDAR data buffer, size: dataTotal, dim: 3 (datumSize x colTotal x rowTotal). refer to struct LidarDataRaw_intens
 
 		// lidar mechanical parameters for points transforming
 		// [0] - paraLa, [1] - paraLx (m)
@@ -81,7 +81,7 @@ namespace Lidar3D
 
 		// point cloud info and buffer
 		std::int32_t pntDataTotal;	// total length of poin cloud buffer: >pntDatumSize x colTotal x rowTotal. 0 - new structure
-		std::int32_t pntDatumSize;	// length of one point (>=3). refer to struct LidarPoint_xxx
+		std::int32_t pntDatumSize;	// length of one point (>=3). refer to struct LidarPoint_xyzi
 		std::int32_t nPnts;			// number of available points.
 		std::int32_t nPntRow;		// number of available point rows. 
 		double* points;				// point cloud buffer, size: pntDataTotal, dim: 3 (pntDatumSize x colTotal x rowTotal). refer to struct LidarPoint_xyzi
@@ -89,7 +89,7 @@ namespace Lidar3D
 		// private data for speeding up calculation, initialized by InitializeBlock()
 		double* sin_theta;		// buffer of sin(column angles), length: colTotal
 		double* cos_theta;		// buffer of cos(column angles), length: colTotal
-		double colRes;			// reciprocal of total number of steps in a column round 
+		double colRes;			// reciprocal of total number of steps in a column round, used for correcting phi 
 	};
 
 	// 三维扫描系统类型
@@ -105,7 +105,7 @@ namespace Lidar3D
 	};
 
 	// 原始数据点的结构
-	struct LidarData_basic
+	struct LidarDataRaw_intens
 	{
 		double distance;			// distance
 		union
@@ -124,7 +124,7 @@ namespace Lidar3D
 			};
 		};
 	};
-	const int lenLidarData_basic = sizeof(LidarData_basic) / sizeof(double);
+	const int lenLidarDataRaw_intens = sizeof(LidarDataRaw_intens) / sizeof(double);
 
 	// 点云点的结构
 	struct LidarPoint_xyzi
@@ -145,7 +145,7 @@ namespace Lidar3D
 			};
 		};
 
-		double brightness;		// transform from intensity of reflected light
+		double brightness;		// transformed from intensity of reflected light (0.0~1.0)
 		double p_x, p_y, p_z;	// xyz coordinates
 		double p_dist;			// sqrt(x*x+y*y+z*z). 0 = invalid point
 	};
