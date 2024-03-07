@@ -1,5 +1,5 @@
 ********************************************************************************
-Point Surfaces Library for analyszing surfaces in points
+Point Surfaces Library for analyzing surfaces in points
 ********************************************************************************
 
 ================================================
@@ -30,14 +30,15 @@ DataSharer_x64.dll is for C++ and DataSharerCs.dll is for C#.
 2. Apps
 ================================================
 
-*** Lidar3DScanner
-The control center of the 3D scanner. Refer to the display terminal "LidarDisplay".
+*** PointLab
+An integrated application for raw data processing. It shows L3D data, calculate the geometry of surfaces, and save as GEO data.
 
 *** LidarDisplay
 The display terminal of the 3D scanner. Refer to the control center "Lidar3DScanner".
 
+*** Lidar3DScanner
+The control center of the 3D scanner. Refer to the display terminal "LidarDisplay".
+
 *** LidarDisplaySim
 The emulator of "Lidar3DScanner". It sends raw data to "LidarDisplay" to simulate real-time scanning.
 
-*** PointLab
-An integrated application for raw data processing. It shows L3D data, calculate the geometry of surfaces, and save as GEO data.
