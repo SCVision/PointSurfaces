@@ -12,7 +12,11 @@ Lib files and h/hpp files.
 
 
 - demos\
-Demo codes for Visual Studio 
+Demo projects for Visual Studio
+
+- matlab_codes\
+Matlab codes for data IO and processing
+
 
 For raw data sets, please go to https://github.com/SCVision/PointSurfaces_Data
 
