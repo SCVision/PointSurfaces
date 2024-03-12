@@ -1,7 +1,7 @@
 % load geo file
 
 %% load data
-fn = '../data_L3D/planes_05.GEO';
+fn = 'planes_05.GEO';
 [geo_data, colAngles, rowAngles, datumSize] = read_GEO(fn);
 
 if datumSize < 8
@@ -65,6 +65,6 @@ else % datumSize >= 26
 end
 
 %% show 3D
-figure(2); 
+figure(1); 
 scatter3(p_x(:),p_y(:),p_z(:),1);
 

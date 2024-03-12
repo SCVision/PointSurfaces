@@ -23,4 +23,4 @@ M_title(3) = rowTotal;
 M_title(3+(1:colTotal)) = colAngles;
 
 M = [M_title; rowAngles geo_data];
-dlmwrite(fn, M, ',');
+dlmwrite(fn, M, 'precision', 9);
