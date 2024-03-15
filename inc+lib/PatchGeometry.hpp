@@ -56,7 +56,7 @@ namespace Lidar3D
 		std::int32_t colTotal;		// maximum points in a column.
 		std::int32_t rowTotal;		// maximum points in a row.
 		std::int32_t modelState;	// 0 - new, 1 - initialized, 2 - patch model, 3 - normal & curvature
-		std::int32_t nPnts;			// number of available points.
+		std::int32_t nPnts;			// number of valid points.
 
 		// data buffer
 		double* angleCol;   // column angles (deg), length: colTotal
@@ -81,22 +81,23 @@ namespace Lidar3D
 	struct PatchPoint_geo
 	{
 		// points
-		double distance;				// distance 
+		double distance;				// distance from the origin, ||(p_x, p_y, p_z)||
 		double intensity, brightness;	// intensity & brightness (0.0~1.0) of reflected light
 		double p_x, p_y, p_z;			// xyz coordinates
-		double density;                 // density
+		double density;                 // density of neighboring points
 		double slope;					// sine of the angle between surface and laser beam (0~1). 0.0 = invalid point
 
 		// geometry
-		double n_x, n_y, n_z;			// unit normal vector (t1 x t2 / |t1 x t2|)
+		double n_x, n_y, n_z;			// unit normal vector (Dp_col x Dp_row / |Dp_col x Dp_row|)
 		double pc1, pc2;				// principle curvature max & min. |pc1| >= |pc2|
 		double pc_x, pc_y, pc_z;		// direction corresponding to pc1 (unit vector)
-		double h11, h12, h22;			// the second fundamental form
 		double belief;					// belief of normal and curvature (0~1). 0.0 = invalid normal
 
 		// reversed
 		double dx_col, dy_col, dz_col;		// tangent vector (Dp_x/Dcol, Dp_y/Dcol, Dp_z/Dcol)
 		double dx_row, dy_row, dz_row;		// tangent vector (Dp_x/Drow, Dp_y/Drow, Dp_z/Drow)
+		double dVol;						// area element, |Dp/Dcol x Dp/Drow| * Dcol * Drow
+		double h11, h12, h22;				// the second fundamental form
 	};
 	const int lenPatchPoint_geo = sizeof(PatchPoint_geo) / sizeof(double);
 
@@ -196,7 +197,7 @@ namespace Lidar3D
 
 		// 功能：读取geo数据文件。原数据被删除。
 		// 输入：datafn - 数据文件名。
-		// 返回值：实际读取数据的行数（data.nRow）。0表示失败。
+		// 返回值：实际读取数据的有效点数（data.nPnts）。0表示失败。
 		// 说明：根据数据文件是否含几何信息，属性modelState设置为2或3。
 		int ReadPatchGeo(const char* datafn);
 
