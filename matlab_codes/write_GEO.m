@@ -1,4 +1,4 @@
-function write_GEO(fn, geo_data, colAngles, rowAngles) 
+function write_GEO(fn, geo_data, colAngles, rowAngles, precision) 
 % Function: write GEO file.
 % Input:
 %     fn - data file name (GEO format).
@@ -6,9 +6,14 @@ function write_GEO(fn, geo_data, colAngles, rowAngles)
 %     colAngles - vertical angles theta (n*1).
 %     rowAngles - horizontal angles phi (m*1). 
 %     datumSize - size of one point
+%     precision - precision of data in text, default = 9
 % 
 % Writen by LIN, Jingyu (linjy02@hotmail.com), 20240312
 %
+
+if nargin == 4
+    precision = 9;
+end
 
 % data info
 colTotal = length(colAngles);
@@ -23,4 +28,4 @@ M_title(3) = rowTotal;
 M_title(3+(1:colTotal)) = colAngles;
 
 M = [M_title; rowAngles geo_data];
-dlmwrite(fn, M, 'precision', 9);
+dlmwrite(fn, M, 'precision', precision);

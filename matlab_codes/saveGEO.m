@@ -10,4 +10,6 @@ if datumSize < 8
 end
 
 %% save data
-write_GEO("test.geo", geo_data, colAngles, rowAngles);
+precision = 9;
+write_GEO("test.geo", geo_data, colAngles, rowAngles, precision);
+
