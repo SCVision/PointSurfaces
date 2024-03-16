@@ -1,5 +1,5 @@
 function [geo_data, colAngles, rowAngles, datumSize] = read_GEO(fn) 
-% Function: load GEO file.
+% Function: read GEO file.
 % Input:
 %     fn - data file name (GEO format).
 % Output:
@@ -23,6 +23,10 @@ rowAngles = rawdata(2:end,1);
 % resolve data rows
 geo_data = rawdata(2:end,2:end);
 
+% check error
+if size(geo_data,2) ~= colTotal*datumSize
+    disp 'cols error'
+end
 if length(rowAngles) ~= rowTotal
     disp 'rows error'
 end
