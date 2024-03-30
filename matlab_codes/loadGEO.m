@@ -71,3 +71,11 @@ end
 figure(1); 
 scatter3(p_x(:),p_y(:),p_z(:),1);
 
+%% check curvature 
+pc1_corr = pc1;
+pc1_corr(pc1>100) = 100; 
+pc1_corr(pc1<-100) = -100; 
+pc1_corr(abs(pc1)<0.001) = 0.001; 
+figure(11);imagesc(colAngles, rowAngles, abs(pc1_corr)')
+xlabel('theta'); ylabel('phi')
+title ('pc1')
