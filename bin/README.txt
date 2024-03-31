@@ -42,3 +42,4 @@ The control center of the 3D scanner. Refer to the display terminal "LidarDispla
 *** LidarDisplaySim
 The emulator of "Lidar3DScanner". It sends raw data to "LidarDisplay" to simulate real-time scanning.
 
+Note: Please insatll and config PCL1.13 for these apps.
