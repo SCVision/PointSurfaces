@@ -1,7 +1,7 @@
 % Show data in 'Data'
 
 %% load data 
-fn = 'planes_05.L3D';
+fn = 'test_data/planes_05.L3D';
 [rData, angleV, angleH, timestamp, datumSize, ...
     La, Lx, Dpsi, Dtheta, Dgamma] = read_L3D(fn); 
 

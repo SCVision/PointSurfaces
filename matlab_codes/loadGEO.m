@@ -1,8 +1,8 @@
 % load geo file
 
 %% load data
-fn = 'planes_05.GEO';
-% fn = 'lab1.GEO';
+fn = 'test_data/planes_05.GEO';
+% fn = 'test_data/lab1.GEO';
 [geo_data, colAngles, rowAngles, datumSize] = read_GEO(fn);
 
 if datumSize < 8
@@ -68,8 +68,8 @@ else % datumSize >= 27
 end
 
 %% show 3D
-figure(1); 
-scatter3(p_x(:),p_y(:),p_z(:),1);
+% figure(1); 
+% scatter3(p_x(:),p_y(:),p_z(:),1);
 
 %% check curvature 
 pc1_corr = pc1;
