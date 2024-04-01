@@ -4,7 +4,7 @@
 
 2. PCLdemo_segment
 - Visual studio demo for segmenting surfaces.
-- Use this demo to load GEO files and segment surfaces.
+- Use this demo to load GEO files, segment surfaces, and save as SEG files.
 
 3. PCLdemo_match
 - Visual studio demo for matching surfaces.
