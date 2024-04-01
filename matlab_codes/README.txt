@@ -1,36 +1,46 @@
 ********************************************************************************
-Matlab codes for data IO and processing
+Point Surfaces Library for analyzing surfaces in points
 ********************************************************************************
 
 ================================================
-1. Demos 
+1. Libs
 ================================================
-*** LoadL3D.m
-Load a L3D file and show the point cloud.
+*** LidarDataBlock
+Define data structure for raw 3D data.
+Refer to LidarDataBlock.hpp.
 
-*** loadGEO.m
-Load a GEO file and show the curvature map.
+*** PatchGeometry
+Calculate geometry on surfaces in raw 3D data.
+Refer to PatchGeometry.hpp.
 
-*** loadGEOnSEG.m
-Load a GEO file and its related SEG file, show a segment and its feature.
+*** PatchSegment
+Segment 3D surfaces.
+Refer to PatchSegment.hpp.
+
+*** LidarDataViewer
+Real-time viewer for scanning raw 3D data.
+Refer to PointCloudViewer.hpp, LidarDataServer.hpp, and LidarDataSharer.h.
+
+*** DataSharer
+Used for transfering data between applications. 
+DataSharer_x64.dll is for C++ and DataSharerCs.dll is for C#.
 
 
 ================================================
-2. Functions
+2. Apps
 ================================================
 
-*** read_SEG.m
-Read from SEG file.
+*** PointLab
+An integrated application for raw data processing. It shows L3D data, calculate the geometry of surfaces, and save as GEO data.
 
-*** write_GEO.m
-Write to GEO file.
+*** LidarDisplay
+The display terminal of the 3D scanner. Refer to the control center "Lidar3DScanner".
 
-*** read_GEO.m
-Read from GEO file.
+*** Lidar3DScanner
+The control center of the 3D scanner. Refer to the display terminal "LidarDisplay".
 
-*** read_L3D.m
-Read from L3D file.
+*** LidarDisplaySim
+The emulator of "Lidar3DScanner". It sends raw data to "LidarDisplay" to simulate real-time scanning.
 
-*** dist2points
-Convert distance array to point sets. 
+Note: Please insatll and config PCL1.13 for these demos.
 
