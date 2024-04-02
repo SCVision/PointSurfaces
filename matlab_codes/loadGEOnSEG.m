@@ -50,39 +50,40 @@ if lenFeature < 17
     return;
 end
 idSeg = seg_feature(:,1);
-nPnts = seg_feature(:,2);
-area = seg_feature(:,3);
-c_x = seg_feature(:,4);
-c_y = seg_feature(:,5);
-c_z = seg_feature(:,6);
-n_x = seg_feature(:,7);
-n_y = seg_feature(:,8);
-n_z = seg_feature(:,9);
-nBar_x = seg_feature(:,10);
-nBar_y = seg_feature(:,11);
-nBar_z = seg_feature(:,12);
-pc1 = seg_feature(:,13);
-pc2 = seg_feature(:,14);
-pc_x = seg_feature(:,15);
-pc_y = seg_feature(:,16);
-pc_z = seg_feature(:,17);
+seg_nPnts = seg_feature(:,2);
+seg_area = seg_feature(:,3);
+seg_c_x = seg_feature(:,4);
+seg_c_y = seg_feature(:,5);
+seg_c_z = seg_feature(:,6);
+seg_n_x = seg_feature(:,7);
+seg_n_y = seg_feature(:,8);
+seg_n_z = seg_feature(:,9);
+seg_nBar_x = seg_feature(:,10);
+seg_nBar_y = seg_feature(:,11);
+seg_nBar_z = seg_feature(:,12);
+seg_pc1 = seg_feature(:,13);
+seg_pc2 = seg_feature(:,14);
+seg_pc_x = seg_feature(:,15);
+seg_pc_y = seg_feature(:,16);
+seg_pc_z = seg_feature(:,17);
 
 %% show segment and its normal
-n = 1; % selected id
+n = 1; % segment id
 
-% segment
+% show segment
 idx = (seg_map == n);
 figure(1); 
 scatter3(p_x(idx),p_y(idx),p_z(idx),1);
 
-% normal
-xn1 = [c_x(n) c_x(n)+n_x(n)];
-yn1 = [c_y(n) c_y(n)+n_y(n)];
-zn1 = [c_z(n) c_z(n)+n_z(n)];
-xn2 = [c_x(n) c_x(n)+nBar_x(n)];
-yn2 = [c_y(n) c_y(n)+nBar_y(n)];
-zn2 = [c_z(n) c_z(n)+nBar_z(n)];
-figure(1); hold on
+% show normal
+xn1 = [seg_c_x(n) seg_c_x(n)+seg_n_x(n)];
+yn1 = [seg_c_y(n) seg_c_y(n)+seg_n_y(n)];
+zn1 = [seg_c_z(n) seg_c_z(n)+seg_n_z(n)];
+xn2 = [seg_c_x(n) seg_c_x(n)+seg_nBar_x(n)];
+yn2 = [seg_c_y(n) seg_c_y(n)+seg_nBar_y(n)];
+zn2 = [seg_c_z(n) seg_c_z(n)+seg_nBar_z(n)];
+figure(1);
+hold on
 plot3(xn1,yn1,zn1,'r',xn2,yn2,zn2,'b')
 hold off
-axis equal % the same units along each axis.
+axis equal % use the same unit along each axis.
