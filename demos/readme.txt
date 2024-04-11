@@ -11,7 +11,7 @@
 - Use this demo to test surface matching algorithms after segmenting surfaces.
 
 4. PCLdemo_registration
-- Visual studio demo for surface registration.
+- Visual studio demo for fine registration of surfaces.
 
 
 Note: Please insatll and config PCL1.13 for these demos.
