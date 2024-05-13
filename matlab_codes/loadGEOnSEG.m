@@ -45,7 +45,7 @@ if colTotal ~= length(colAngles) || rowTotal ~= length(rowAngles)
     return;
 end
 [nSeg, lenFeature] = size(seg_feature);
-if lenFeature < 17 
+if lenFeature < 12 
     disp 'invalid SEG data'
     return;
 end
@@ -61,11 +61,11 @@ seg_n_z = seg_feature(:,9);
 seg_nBar_x = seg_feature(:,10);
 seg_nBar_y = seg_feature(:,11);
 seg_nBar_z = seg_feature(:,12);
-seg_pc1 = seg_feature(:,13);
-seg_pc2 = seg_feature(:,14);
-seg_pc_x = seg_feature(:,15);
-seg_pc_y = seg_feature(:,16);
-seg_pc_z = seg_feature(:,17);
+% seg_pc1 = seg_feature(:,13);
+% seg_pc2 = seg_feature(:,14);
+% seg_pc_x = seg_feature(:,15);
+% seg_pc_y = seg_feature(:,16);
+% seg_pc_z = seg_feature(:,17);
 
 %% show segment and its normal
 n = 1; % segment id
