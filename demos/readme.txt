@@ -14,5 +14,5 @@
 - Visual studio demo for fine registration of surfaces.
 
 
-Note 1: Please insatll and config PCL1.13 for these demos.
+Note 1: Please insatll and config PCL1.13 for these demo codes.
 Note 2: The data files for these demo codes can be doownloaded from PointSurfaces/matlab_codes/test_data/.
