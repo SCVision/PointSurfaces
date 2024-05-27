@@ -12,7 +12,7 @@ Lib files and h/hpp files.
 
 
 - demos\
-Demo projects for Visual Studio
+Demo codes for Visual Studio
 
 - matlab_codes\
 Matlab codes for data IO and processing
