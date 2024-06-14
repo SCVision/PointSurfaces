@@ -55,20 +55,22 @@ seg_area = seg_feature(:,3);
 seg_c_x = seg_feature(:,4);
 seg_c_y = seg_feature(:,5);
 seg_c_z = seg_feature(:,6);
-seg_n_x = seg_feature(:,7);
-seg_n_y = seg_feature(:,8);
-seg_n_z = seg_feature(:,9);
-seg_nBar_x = seg_feature(:,10);
-seg_nBar_y = seg_feature(:,11);
-seg_nBar_z = seg_feature(:,12);
-% seg_pc1 = seg_feature(:,13);
-% seg_pc2 = seg_feature(:,14);
-% seg_pc_x = seg_feature(:,15);
-% seg_pc_y = seg_feature(:,16);
-% seg_pc_z = seg_feature(:,17);
+seg_nBar_x = seg_feature(:,7);
+seg_nBar_y = seg_feature(:,8);
+seg_nBar_z = seg_feature(:,9);
+seg_n_x = seg_feature(:,10);
+seg_n_y = seg_feature(:,11);
+seg_n_z = seg_feature(:,12);
+seg_s_x = seg_feature(:,13);
+seg_s_y = seg_feature(:,14);
+seg_s_z = seg_feature(:,15);
+seg_eig0 = seg_feature(:,16);
+seg_eig1 = seg_feature(:,17);
+seg_eig2 = seg_feature(:,18);
+seg_type = seg_feature(:,19);
 
 %% show segment and its normal
-n = 1; % segment id
+n = 12; % segment id
 
 % show segment
 idx = (seg_map == n);
@@ -85,5 +87,22 @@ zn2 = [seg_c_z(n) seg_c_z(n)+seg_nBar_z(n)];
 figure(1);
 hold on
 plot3(xn1,yn1,zn1,'r',xn2,yn2,zn2,'b')
+% plot3(xn1,yn1,zn1,'r')
 hold off
 axis equal % use the same unit along each axis.
+
+% ca = seg_n_x.*seg_nBar_x + seg_n_y.*seg_nBar_y +seg_n_z.*seg_nBar_z;
+% figure(2); plot(ca)
+
+%% test PCA
+x = [p_x(idx),p_y(idx),p_z(idx)]';
+v = dVol(idx)';
+v_sum = sum(v);
+vx = x.*repmat(v,3,1);
+x_bar = sum(vx, 2) / v_sum;
+sigma = vx*x' / v_sum - x_bar * x_bar';
+% x_bar = sum(x, 2) / seg_nPnts(n);
+% sigma = x*x' / seg_nPnts(n) - x_bar * x_bar';
+
+[U,S,V] = svd(sigma,0);
+disp(sqrt(12*diag(S)))
