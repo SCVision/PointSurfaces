@@ -10,7 +10,7 @@ Define data structure for raw 3D data.
 Refer to LidarDataBlock.hpp.
 
 *** PatchGeometry
-Calculate geometry on surfaces in raw 3D data.
+Build geometric models on surfaces in raw 3D data.
 Refer to PatchGeometry.hpp.
 
 *** PatchSegment
@@ -31,15 +31,16 @@ DataSharer_x64.dll is for C++ and DataSharerCs.dll is for C#.
 ================================================
 
 *** PointLab
-An integrated application for raw data processing. It shows L3D data, calculate the geometry of surfaces, and save as GEO data.
+An integrated application for raw 3D data processing. It shows L3D data, models the geometry of surfaces on point clouds, and save as GEO data.
+rev 20240717: greatly improve the efficiency of geometric modeling.
 
 *** LidarDisplay
-The display terminal of the 3D scanner. Refer to the control center "Lidar3DScanner".
+A real-time display terminal for the 3D scanner. Refer to the control center "Lidar3DScanner".
 
 *** Lidar3DScanner
-The control center of the 3D scanner. Refer to the display terminal "LidarDisplay".
+The control center of the 3D scanner. Refer to the real-time display terminal "LidarDisplay".
 
 *** LidarDisplaySim
-The emulator of "Lidar3DScanner". It sends raw data to "LidarDisplay" to simulate real-time scanning.
+An emulator of "Lidar3DScanner". It sends raw data to "LidarDisplay" to simulate real-time scanning.
 
 Note: Please insatll and config PCL1.13 for these apps.
