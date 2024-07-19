@@ -1,6 +1,7 @@
 1. PCLdemo_model
 - Visual studio demo for processing L3D data files and modelling surfaces.
 - Use this demo to load L3D files, model surfaces, and save as GEO files.
+20240719: greatly improve the efficiency of geometric modeling.
 
 2. PCLdemo_segment
 - Visual studio demo for segmenting surfaces.
