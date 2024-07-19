@@ -3,16 +3,15 @@
 - Use this demo to load L3D files, model surfaces, and save as GEO files.
 - 20240719: greatly improve the efficiency of geometric modeling.
 
+
 2. PCLdemo_segment
 - Visual studio demo for segmenting surfaces.
 - Use this demo to load GEO files, segment surfaces, and save as SEG files.
 
-3. PCLdemo_match
+
+3. PCLdemo_regist
 - Visual studio demo for matching surfaces.
 - Use this demo to test surface matching algorithms after segmenting surfaces.
-
-4. PCLdemo_registration
-- Visual studio demo for fine registration of surfaces.
 
 
 Note 1: Please insatll and config PCL1.13 for these demo codes.
