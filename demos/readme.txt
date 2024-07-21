@@ -7,6 +7,7 @@
 2. PCLdemo_segment
 - Visual studio demo for segmenting surfaces.
 - Use this demo to load GEO files, segment surfaces, and save as SEG files.
+- 20240721: improve the way of searching seeds and the efficiency of segmentation. 
 
 
 3. PCLdemo_regist
