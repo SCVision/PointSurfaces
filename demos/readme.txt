@@ -1,13 +1,15 @@
 1. PCLdemo_model
 - Visual studio demo for processing L3D data files and modelling surfaces.
 - Use this demo to load L3D files, model surfaces, and save as GEO files.
-- 20240719: greatly improve the efficiency of geometric modeling.
+- 20240719: greatly improve the efficiency of geometric modeling (PatchGeometry).
+- 20241015: improve the precision of geometric modeling (PatchGeometry).
 
 
 2. PCLdemo_segment
 - Visual studio demo for segmenting surfaces.
 - Use this demo to load GEO files, segment surfaces, and save as SEG files.
 - 20240721: improve the way of searching seeds and the efficiency of segmentation. 
+- 20241015: follow the upgrade of PatchGeometry. 
 
 
 3. PCLdemo_regist
