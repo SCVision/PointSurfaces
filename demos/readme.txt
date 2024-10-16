@@ -16,7 +16,13 @@
 - Visual studio demo for surface registration.
 - Use this demo to test surface matching algorithms after segmenting surfaces.
 - 20240721: first beta version. Note: you may copy the data of 'lab1' from PCLdemo_segment.
+
+
+4. PCLdemo_regist_demo
+- Visual studio demo for surface registration.
+- Use this demo to show registration result of multiple point clouds.
 - 20240803: first release version. This demo combines multiple pointclouds, you may test by copying the data of 'lab1', 'lab2', 'lab3' and 'lab4' from 'matlab_codes/test_data/'.
+
 
 Note 1: Please insatll and config PCL1.13 for these demo codes.
 Note 2: The data files for these demo codes can be doownloaded from PointSurfaces/matlab_codes/test_data/.
