@@ -22,6 +22,7 @@
 - Visual studio demo for surface registration.
 - Use this demo to show registration result of multiple point clouds.
 - 20240803: first release version. This demo combines multiple pointclouds, you may test by copying the data of 'lab1', 'lab2', 'lab3' and 'lab4' from 'matlab_codes/test_data/'.
+- 20241016: involve the whole process of modeling, segmenting, and registration. 
 
 
 Note 1: Please insatll and config PCL1.13 for these demo codes.
